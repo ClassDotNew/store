@@ -1,0 +1,23 @@
+  <section>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="product_single">
+            <h2><%= @product.name %></h2>
+            <p>Price: <%= @product.price %></p>
+            <img src="<%= @product.image %>" alt="<%= @product.name %>" class="img-responsive">
+            <p>Description: <%= @product.description %></p>
+            <% if current_user && current_user.admin %>
+              <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-success" %>
+              <%= link_to "Delete", "/products/#{@product.id}", {method: :delete, class: "btn btn-danger" }%>
+
+            <% end %>
+        </div>
+      </div>
+    </div>
+    <%= form_tag '/carted_products', method: :post do %>
+
+      <%= text_field_tag :quantity %>
+      <%= hidden_field_tag :product_id, @product.id %>
+      <%= submit_tag "Add to Cart"%>
+    <% end %>
+  </section>

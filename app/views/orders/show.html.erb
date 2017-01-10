@@ -1,0 +1,13 @@
+<p>You have made a purchase of <%= @order.total %></p>
+
+<p>Your id # is <%= @order.id %>
+
+
+<p>You ordered:</p>
+
+<% @order.carted_products.each do |carted_product| %>
+
+  <%= carted_product.product.name %>
+  <%= carted_product.quantity %>
+<% end %>
+

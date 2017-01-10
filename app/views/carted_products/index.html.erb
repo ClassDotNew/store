@@ -1,0 +1,17 @@
+<p>Here are all of the products in your cart</p>
+
+<% @carted_products.each do |carted_product| %>
+  <h5><%= carted_product.product.name %></h5>
+  <p><%= link_to "Remove item from cart", "/carted_products/#{carted_product.id}", method: :delete %></p>
+  <h5><%= carted_product.quantity %></h5>
+  Total
+  <h5><%= carted_product.quantity * carted_product.product.price.to_i %></h5>
+
+<% end %>
+
+
+<%= form_tag "/orders", method: :post do %>
+  <% submit_tag "Buy Now!" %>
+<% end %>
+
+
