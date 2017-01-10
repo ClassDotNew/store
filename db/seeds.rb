@@ -1,4 +1,5 @@
 Product.create!([
+
   {name: "Brian Rice", price: 4, description: "desc", image: "image", supplier_id: 1, user_id: 1},
   {name: "Sonic Screwdriver", price: 9, description: "The Doctor's sciencey magic wand to get out of tight spots. Note: does not work on wood", image: "http://i120.photobucket.com/albums/o176/d_jedi1/Who/qmx-10thdoctorsonic-1.jpg", supplier_id: 1, user_id: 1},
   {name: "WNYX Mug", price: 2, description: "Get your morning news once you wake up with a cup of joe from... well Joe. He made it with his homemade duct tape", image: "http://s32.postimg.org/6mceui22t/wnyx_mug.png", supplier_id: 1, user_id: 1},
